@@ -47,16 +47,6 @@ The analysis is based on a MySQL table named `bank_loans`.
 - Repayment and portfolio quality fields: `loan_status`, `dti`, `total_payment`
 - Date fields: `issue_date`, `last_payment_date`, `next_payment_date`, `last_credit_pull_date`
 
-### Why This Dataset Is Useful
-
-This dataset supports:
-- portfolio performance monitoring
-- borrower risk analysis
-- loan status analysis
-- portfolio quality measurement
-- state-wise and segment-wise loan concentration analysis
-- trend-based lending analysis
-
 ## Tools and Technologies
 
 ### Tools Used
