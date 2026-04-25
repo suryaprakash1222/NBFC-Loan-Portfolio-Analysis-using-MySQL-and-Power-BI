@@ -1,36 +1,3 @@
-# NBFC Loan Portfolio Analysis using MySQL and Power BI
-
-<p align="center">
-  <img src="Bank-Loan-Report-Summary.jpg" alt="NBFC Loan Portfolio Summary Dashboard" width="100%">
-</p>
-
-<p align="center">
-  <strong>MySQL | SQL | Power BI | Lending Analytics | Portfolio Quality Analysis</strong>
-</p>
-
-<p align="center">
-  A business-focused NBFC loan book analysis project centered on portfolio quality, borrower risk indicators, good-loan vs bad-loan classification, and KPI validation through SQL and Power BI.
-</p>
-
----
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Project Objective](#project-objective)
-- [Business Problem](#business-problem)
-- [Dataset and Schema](#dataset-and-schema)
-- [Tools and Technologies](#tools-and-technologies)
-- [Project Workflow](#project-workflow)
-- [KPI Snapshot](#kpi-snapshot)
-- [Business Problems and SQL Solutions](#business-problems-and-sql-solutions)
-- [Dashboard Pages](#dashboard-pages)
-- [Business Value](#business-value)
-- [Repository Structure](#repository-structure)
-- [Author](#author)
-
----
-
 ## Overview
 
 This project is an end-to-end **NBFC Loan Portfolio Analysis** built using **MySQL** and **Power BI**.
@@ -46,8 +13,6 @@ The analysis focuses on understanding the quality and performance of an NBFC loa
 
 A major focus of this project is to assess how much of the portfolio is performing well, how much is exposed to risky loans, and which borrower or loan segments need closer monitoring.
 
----
-
 ## Project Objective
 
 The objective of this project is to analyze an NBFC loan portfolio to evaluate **portfolio quality**, **repayment performance**, and **borrower risk indicators**.
@@ -59,14 +24,9 @@ This project was designed to:
 - identify concentration across states, terms, employment groups, purposes, and home ownership categories
 - validate all business KPIs in SQL before presenting them through an interactive Power BI dashboard
 
-This makes the project both technically strong and business-relevant for lending analytics use cases.
-
----
-
 ## Business Problem
 
 Financial institutions and NBFCs need to continuously monitor the quality of their loan portfolio to understand:
-
 - how much of the portfolio is healthy
 - how much is exposed to bad loans
 - whether repayment trends are improving or weakening
@@ -74,8 +34,6 @@ Financial institutions and NBFCs need to continuously monitor the quality of the
 - which segments contribute the most to portfolio concentration
 
 This project addresses those questions using structured SQL analysis and dashboard reporting.
-
----
 
 ## Dataset and Schema
 
@@ -99,8 +57,6 @@ This dataset supports:
 - state-wise and segment-wise loan concentration analysis
 - trend-based lending analysis
 
----
-
 ## Tools and Technologies
 
 ### Tools Used
@@ -123,8 +79,6 @@ This dataset supports:
 - Power BI dashboard development
 - SQL-based KPI validation
 
----
-
 ## Project Workflow
 
 This project follows a validation-first workflow:
@@ -135,10 +89,6 @@ This project follows a validation-first workflow:
 4. Validate KPIs such as funded amount, collections, portfolio quality, and borrower risk indicators.
 5. Build a Power BI dashboard using the same business logic.
 6. Cross-check dashboard values with SQL outputs.
-
-This workflow ensures that the dashboard is backed by validated SQL analysis instead of only visual reporting.
-
----
 
 ## KPI Snapshot
 
@@ -157,14 +107,7 @@ This workflow ensures that the dashboard is backed by validated SQL analysis ins
 - **Good Loans** = `Fully Paid` and `Current`
 - **Bad Loans** = `Charged Off`
 
-These KPIs help measure both the scale and the quality of the loan portfolio.
-
----
-
 ## Business Problems and SQL Solutions
-
-<details>
-<summary><strong>Dashboard 1: Summary KPI Queries</strong></summary>
 
 ### 1. Total Loan Applications
 
@@ -176,8 +119,6 @@ from bank_loans;
 ```
 
 **Output:** `38,576`
-
----
 
 ### 2. Month-to-Date (MTD) Loan Applications
 
@@ -192,8 +133,6 @@ group by 1;
 
 **Output:** `4,314`
 
----
-
 ### 3. Previous-Month-to-Date (PMTD) Loan Applications
 
 **Problem:** Find the number of loan applications in November 2021.
@@ -206,8 +145,6 @@ group by 1;
 ```
 
 **Output:** `4,035`
-
----
 
 ### 4. MoM Change % for Loan Applications
 
@@ -233,8 +170,6 @@ where months=12;
 
 **Output:** `6.91%`
 
----
-
 ### 5. Total Funded Amount
 
 **Problem:** Find the total funded amount across the portfolio.
@@ -245,8 +180,6 @@ from bank_loans;
 ```
 
 **Output:** `$435.76M`
-
----
 
 ### 6. MTD Total Funded Amount
 
@@ -261,8 +194,6 @@ group by month(issue_date);
 
 **Output:** `$53,981,425`
 
----
-
 ### 7. PMTD Total Funded Amount
 
 **Problem:** Find the funded amount for November 2021.
@@ -275,8 +206,6 @@ group by month(issue_date);
 ```
 
 **Output:** `$47,754,825`
-
----
 
 ### 8. MoM Change % for Funded Amount
 
@@ -302,8 +231,6 @@ where months=12;
 
 **Output:** `13.04%`
 
----
-
 ### 9. Total Amount Received
 
 **Problem:** Find the total amount received from borrowers.
@@ -314,8 +241,6 @@ from bank_loans;
 ```
 
 **Output:** `$473.07M`
-
----
 
 ### 10. MTD Total Amount Received
 
@@ -330,8 +255,6 @@ group by month(issue_date);
 
 **Output:** `$58,074,380`
 
----
-
 ### 11. PMTD Total Amount Received
 
 **Problem:** Find the amount received in November 2021.
@@ -345,8 +268,6 @@ group by month(issue_date);
 
 **Output:** `$50,132,030`
 
----
-
 ### 12. MoM Change % for Total Amount Received
 
 **Problem:** Calculate month-over-month change in amount received.
@@ -356,8 +277,6 @@ select ((58074380 - 50132030) / 50132030) * 100 as mom_change_percent;
 ```
 
 **Output:** `15.84%`
-
----
 
 ### 13. Average Interest Rate
 
@@ -369,8 +288,6 @@ from bank_loans;
 ```
 
 **Output:** `12.05%`
-
----
 
 ### 14. MTD Average Interest Rate
 
@@ -385,8 +302,6 @@ group by month(issue_date);
 
 **Output:** `12.35%`
 
----
-
 ### 15. PMTD Average Interest Rate
 
 **Problem:** Find the average interest rate for November 2021.
@@ -400,8 +315,6 @@ group by month(issue_date);
 
 **Output:** `11.94%`
 
----
-
 ### 16. MoM Change % for Average Interest Rate
 
 **Problem:** Calculate month-over-month change in average interest rate.
@@ -411,8 +324,6 @@ select ((0.1235 - 0.1194) / 0.1194) * 100 as mom_change_percent;
 ```
 
 **Output:** `3.43%`
-
----
 
 ### 17. Average Debt-to-Income Ratio (DTI)
 
@@ -424,8 +335,6 @@ from bank_loans;
 ```
 
 **Output:** `13.33%`
-
----
 
 ### 18. MTD Average DTI
 
@@ -440,8 +349,6 @@ group by month(issue_date);
 
 **Output:** `13.66%`
 
----
-
 ### 19. PMTD Average DTI
 
 **Problem:** Find the average DTI for November 2021.
@@ -455,8 +362,6 @@ group by month(issue_date);
 
 **Output:** `13.30%`
 
----
-
 ### 20. MoM Change % for Average DTI
 
 **Problem:** Calculate month-over-month change in average DTI.
@@ -466,8 +371,6 @@ select ((0.1366 - 0.1330) / 0.1330) * 100 as mom_change_percent;
 ```
 
 **Output:** `2.70%`
-
----
 
 ### 21. Good Loan KPIs
 
@@ -490,8 +393,6 @@ group by loan_status;
 - Good loan funded amount
 - Good loan total received amount
 
----
-
 ### 22. Bad Loan KPIs
 
 **Problem:** Measure the risky portion of the portfolio.
@@ -512,8 +413,6 @@ group by loan_status;
 - Bad loan percentage
 - Bad loan funded amount
 - Bad loan total received amount
-
----
 
 ### 23. Loan Status Grid View
 
@@ -539,8 +438,6 @@ group by loan_status;
 - average interest rate
 - average DTI by loan status
 
----
-
 ### 24. Loan Status MTD Grid View
 
 **Problem:** Compare loan-status metrics for December 2021.
@@ -559,11 +456,6 @@ group by loan_status;
 ```
 
 **Output Focus:** Monthly loan-status quality view for the latest month.
-
-</details>
-
-<details>
-<summary><strong>Dashboard 2: Overview Analysis Queries</strong></summary>
 
 ### 25. Monthly Trends by Issue Date
 
@@ -587,8 +479,6 @@ order by month_no;
 - December funded amount: `$53,981,425`
 - December total received amount: `$58,074,380`
 
----
-
 ### 26. Regional Analysis by State
 
 **Problem:** Measure state-wise portfolio concentration.
@@ -609,8 +499,6 @@ group by address_state;
 - FL: `2,773`
 - TX: `2,664`
 
----
-
 ### 27. Loan Term Analysis
 
 **Problem:** Analyze the portfolio by term.
@@ -626,8 +514,6 @@ group by 1;
 ```
 
 **Output Insight:** The portfolio is dominated by `36-month` loans.
-
----
 
 ### 28. Employee Length Analysis
 
@@ -645,8 +531,6 @@ group by 1;
 
 **Output Insight:** Borrowers with `10+ years` of employment form the largest group.
 
----
-
 ### 29. Loan Purpose Breakdown
 
 **Problem:** Analyze why borrowers are taking loans.
@@ -662,8 +546,6 @@ group by 1;
 ```
 
 **Output Insight:** `Debt consolidation` is the largest loan purpose category.
-
----
 
 ### 30. Home Ownership Analysis
 
@@ -681,13 +563,9 @@ group by 1;
 
 **Output Insight:** `RENT` and `MORTGAGE` are the dominant borrower home ownership categories.
 
-</details>
-
----
-
 ## Dashboard Pages
 
-## 1. Summary Dashboard
+### 1. Summary Dashboard
 
 ![Summary Dashboard](Bank-Loan-Report-Summary.jpg)
 
@@ -703,11 +581,7 @@ It includes:
 - bad loan percentage
 - loan status matrix
 
-This dashboard page is designed for quick executive review of portfolio size, repayment performance, and portfolio quality.
-
----
-
-## 2. Overview Dashboard
+### 2. Overview Dashboard
 
 ![Overview Dashboard](Bank-Loan-Report-Overview.jpg)
 
@@ -721,11 +595,7 @@ It includes:
 - loan purpose breakdown
 - home ownership analysis
 
-This view helps identify where loan volume and portfolio concentration are strongest.
-
----
-
-## 3. Details Dashboard
+### 3. Details Dashboard
 
 ![Details Dashboard](Bank-Loan-Report-Details.jpg)
 
@@ -743,10 +613,6 @@ It includes fields such as:
 - installment
 - total amount received
 
-This layer helps connect dashboard-level observations to individual loan records.
-
----
-
 ## Business Value
 
 This project demonstrates how SQL and Power BI can be used together to support practical NBFC lending analysis.
@@ -761,8 +627,6 @@ The project helps evaluate:
 
 It reflects a strong mix of technical execution and business understanding in a lending analytics context.
 
----
-
 ## Repository Structure
 
 ```text
@@ -776,8 +640,6 @@ nbfc-loan-portfolio-analysis/
 ├── Bank-Loan-Report-Details.jpg
 └── README.md
 ```
-
----
 
 ## Author
 
