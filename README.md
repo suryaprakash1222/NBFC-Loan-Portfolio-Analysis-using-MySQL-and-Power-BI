@@ -567,7 +567,7 @@ group by 1;
 
 ### 1. Summary Dashboard
 
-![Summary Dashboard](Bank-Loan-Report-Summary.jpg)
+![Summary Dashboard](./Bank%20Loan%20Report-Summary.png)
 
 This page presents the most important loan portfolio KPIs in one place.
 
@@ -583,7 +583,7 @@ It includes:
 
 ### 2. Overview Dashboard
 
-![Overview Dashboard](Bank-Loan-Report-Overview.jpg)
+![Overview Dashboard](./Bank%20Loan%20Report-Overview.png)
 
 This page focuses on trend and segment analysis across the loan portfolio.
 
@@ -597,7 +597,7 @@ It includes:
 
 ### 3. Details Dashboard
 
-![Details Dashboard](Bank-Loan-Report-Details.jpg)
+![Details Dashboard](./Bank%20Loan%20Report-Details.png)
 
 This page provides detailed loan-level visibility for deeper inspection.
 
@@ -632,13 +632,13 @@ It reflects a strong mix of technical execution and business understanding in a 
 ```text
 nbfc-loan-portfolio-analysis/
 │
-├── nbfc_loan_portfolio_data.csv.csv
+├── Bank Loan Report-Details.png
+├── Bank Loan Report-Overview.png
+├── Bank Loan Report-Summary.png
+├── README.md
 ├── SQL-Script-for-nbfc_loan_portfolio_analysis.sql
-├── SQL-based-solution-for-Business-Problems.docx
-├── Bank-Loan-Report-Summary.jpg
-├── Bank-Loan-Report-Overview.jpg
-├── Bank-Loan-Report-Details.jpg
-└── README.md
+├── SQL-based solution for Business Problems.docx
+└── nbfc_loan_portfolio_data.csv.csv
 ```
 
 ## Author
